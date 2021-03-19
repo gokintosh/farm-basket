@@ -1,0 +1,28 @@
+package com.gokul.farmbasketbackend.dto.user;
+
+
+import lombok.Data;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+
+@Data
+public class UserDtoIn {
+
+//    @NotBlank(message="Fill captcha.")
+//    private String captcha;
+
+    @NotBlank(message = "username cannot be empty")
+    private String username;
+
+    @NotBlank(message = "Password cannot be empty")
+    private String password;
+
+    @NotBlank(message = "Password2 cannot be empty")
+    private String password2;
+
+    @Email(message = "Incorrect email")
+    @NotBlank(message = "Email cannot ")
+    private String email;
+
+}
