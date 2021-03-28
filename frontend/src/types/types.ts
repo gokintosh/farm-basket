@@ -19,7 +19,6 @@ export type UserRegistration={
     username:string
     password:string
     password2:string
-    captcha:string|null
 };
 
 export type AuthErrors = {

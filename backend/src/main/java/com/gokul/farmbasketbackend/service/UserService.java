@@ -1,8 +1,12 @@
 package com.gokul.farmbasketbackend.service;
 
-import com.gokul.farmbasketbackend.domain.User;
+import com.gokul.farmbasketbackend.entity.User;
 
 public interface UserService {
 
-    boolean addUser(User user);
+    User save(User user);
+
+    User findOne(String username);
+
+    User update(User user);
 }
