@@ -15,7 +15,7 @@ const Registration=()=>{
 
     const{emailError,nameError,passwordError,password2Error}=errors;
     const[email, setEmail] = useState<string>("");
-    const [name, setName] = useState<string>("");
+    const [username, setUsername] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const [password2, setPassword2] = useState<string>("");
 
@@ -27,14 +27,14 @@ const Registration=()=>{
 
     useEffect(()=>{
         setEmail("");
-        setName("");
+        setUsername("");
         setPassword("");
         setPassword2("");
     },[isRegistered]);
 
     const onClickSignUp=(event:FormEvent<HTMLFormElement>):void=>{
         event.preventDefault();
-        const userRegistrationData:UserRegistration={email,name,password,password2}
+        const userRegistrationData:UserRegistration={email,username,password,password2}
         dispatch(registration(userRegistrationData));
 
     };
@@ -63,11 +63,11 @@ const Registration=()=>{
                     </div>
                 </div>
                 <div className="form-group row">
-                    <label className="col-sm-2 col-form-label">Name</label>
+                    <label className="col-sm-2 col-form-label">UserName</label>
                     <FontAwesomeIcon style={{position:"relative",top:"8px"}} icon={faUser}/>
                     <div className="col-sm-4">
-                        <input type="text" name="name" value={name} className={nameError?"form-control is-invalid":"form-control"}
-                        onChange={(event)=>setName(event.target.value)}
+                        <input type="text" name="name" value={username} className={nameError?"form-control is-invalid":"form-control"}
+                        onChange={(event)=>setUsername(event.target.value)}
                         />
                         <div className="invalid-feedback">{nameError}</div>
                     </div>

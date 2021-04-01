@@ -1,6 +1,6 @@
 export type User={
     id:number
-    name:string
+    username:string
     email:string
     active:boolean
     activationCode:String|null
@@ -9,7 +9,7 @@ export type User={
 
 export type UserRegistration={
     email:string
-    name:string
+    username:string
     password:string
     password2:string
 };
