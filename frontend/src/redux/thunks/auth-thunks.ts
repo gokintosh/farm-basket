@@ -9,7 +9,7 @@ import { registerFailure, registerSuccess, showLoader } from "../actions/auth-ac
 export const registration=(userRegistrationData:UserRegistration)=>async(dispatch:Dispatch)=>{
     try{
         dispatch(showLoader());
-        const response=await axios.post(API_BASE_URL+"/registration",userRegistrationData);
+        const response=await axios.post(API_BASE_URL+"/registration/",userRegistrationData);
         dispatch(registerSuccess(response.data));
     }catch(error){
         dispatch(registerFailure(error.response.data));

@@ -19,7 +19,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/v1/registration")
+@RequestMapping("/api/v1/registration/")
 public class RegistrationController {
 
     private final UserMapper userMapper;
@@ -36,5 +36,7 @@ public class RegistrationController {
         if(!userMapper.registerUser(user)){
             throw new EmailException("Email is already used.");
         }
+
+        return ResponseEntity.ok("User successfully Registered");
     }
 }
